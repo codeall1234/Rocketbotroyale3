@@ -5,7 +5,7 @@ const app = express()
 app.get("/chess/*", (req, res, next) => {
   const pathSegments = req.path.split('/');
   const discordPath = pathSegments[2]
-  https.request(new URL("https://chess.com/" + discordPath), (resp) => {
+  https.request(new URL("https://discord.com/" + discordPath), (resp) => {
     res.contentType(resp.headers["content-type"])
     resp.pipe(res)
   }).end()
